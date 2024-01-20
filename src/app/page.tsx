@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import profile from "./profile.jpeg";
 export default function Home() {
   return (
     <div className="bg-blue-900 text-white h-dvh flex justify-center items-center">
       <div className="text-center">
         {/* Profile Picture */}
         <Image
-          src="/profile.jpeg"
+          src={profile}
           alt="Picture of the author"
           width={500}
           height={500}
