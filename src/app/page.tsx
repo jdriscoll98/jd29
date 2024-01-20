@@ -3,7 +3,7 @@ import Link from "next/link";
 import profile from "./profile.jpeg";
 export default function Home() {
   return (
-    <div className="bg-blue-900 text-white h-dvh flex justify-center items-center">
+    <div className="bg-green-700 text-white h-dvh flex justify-center items-center">
       <div className="text-center">
         {/* Profile Picture */}
         <Image
