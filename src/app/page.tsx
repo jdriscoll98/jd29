@@ -26,7 +26,7 @@ export default function Home() {
         {/* Social Links */}
         <div className="flex justify-center mt-4">
           <Link
-            href="https://www.medium.com/jdriscoll98"
+            href="https://medium.com/@jackdriscoll_90855"
             className="mx-2 text-2xl"
             target="_blank"
           >
@@ -41,7 +41,7 @@ export default function Home() {
             </svg>
           </Link>
           <Link
-            href="https://twitter.com/jdriscoll98"
+            href="https://twitter.com/JKDRISC"
             className="mx-2 text-2xl"
           >
             <svg
@@ -66,7 +66,7 @@ export default function Home() {
             </svg>
           </Link>
           <Link
-            href="https://www.linkedin.com/in/jdriscoll98"
+            href="https://www.linkedin.com/in/jack-driscoll-453718164/"
             className="mx-2 text-2xl"
           >
             <svg
