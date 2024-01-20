@@ -6,7 +6,7 @@ export default function Home() {
       <div className="text-center">
         {/* Profile Picture */}
         <Image
-          src="/jd29/profile.jpeg"
+          src="/profile.jpeg"
           alt="Picture of the author"
           width={500}
           height={500}
