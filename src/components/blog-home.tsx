@@ -11,7 +11,7 @@ import Image from 'next/image';
 export function BlogHome() {
   return (
     <div className="flex flex-col min-h-[100dvh] items-center max-w-[100rem] mx-auto">
-      <header className="px-4 lg:px-6 h-14 flex items-center w-full ">
+      <header className="px-4 lg:px-6 h-14 flex items-center w-full flex-col sm:flex-row py-4 sm:py-0 gap-4">
         <Link className="flex items-center justify-center" href="#">
           NextGen Marketplaces
         </Link>
