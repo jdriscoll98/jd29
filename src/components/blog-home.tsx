@@ -45,7 +45,7 @@ export function BlogHome() {
                 Learn More{"\n"}
               </Link>
             </div>
-            <div className="mx-auto w-full max-h-[300px] aspect-video overflow-hidden rounded-xl object-cover object-center">
+            <div className="mx-auto  max-h-[300px] aspect-video overflow-clip rounded-xl  object-cover object-center">
               <Image alt="Image" className="aspect-[16/9]" height="310" src="/header.webp" width="550" />
             </div>
           </div>
