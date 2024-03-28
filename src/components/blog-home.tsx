@@ -148,6 +148,54 @@ export function BlogHome() {
           </div>
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32 border-t">
+          <div className="container grid items-center gap-4 px-4 sm:px-6 lg:gap-10">
+            <div className="space-y-4">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">AI Resources</h2>
+              <p className="text-gray-500 dark:text-gray-400">
+                Curated resources to help you learn more about AI-enabled marketplaces.
+              </p>
+            </div>
+            <div className="mx-auto grid max-w-5xl items-start gap-6 lg:grid-cols-2 lg:gap-12">
+              <div className="grid gap-1">
+                <h3 className="text-lg font-bold">Infinite scalability, zero config</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Enable code to run on-demand without needing to manage your own infrastructure or upgrade hardware.
+                </p>
+              </div>
+              <div className="grid gap-1">
+                <h3 className="text-lg font-bold">Real-time insights and controls</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Get granular, first-party, real-user metrics on site performance per deployment.
+                </p>
+              </div>
+              <div className="grid gap-1">
+                <h3 className="text-lg font-bold">Personalization at the edge</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Deliver dynamic, personalized content, while ensuring users only see the best version of your site.
+                </p>
+              </div>
+              <div className="grid gap-1">
+                <h3 className="text-lg font-bold">Real-time insights and controls</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Get granular, first-party, real-user metrics on site performance per deployment.
+                </p>
+              </div>
+              <div className="grid gap-1">
+                <h3 className="text-lg font-bold">Personalization at the edge</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Deliver dynamic, personalized content, while ensuring users only see the best version of your site.
+                </p>
+              </div>
+              <div className="grid gap-1">
+                <h3 className="text-lg font-bold">Infinite scalability, zero config</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Enable code to run on-demand without needing to manage your own infrastructure or upgrade hardware.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="w-full py-12 md:py-24 lg:py-32 border-t">
           <div className="container grid max-w-5xl items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:py-12 mx-auto">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
