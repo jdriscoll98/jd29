@@ -13,7 +13,6 @@ export function getPostBySlug(slug: string) {
   const fullPath = join(postsDirectory, `${slug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
-  console.log(data);
   return { data, content } as Post;
 }
 
