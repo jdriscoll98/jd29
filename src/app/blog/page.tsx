@@ -1,5 +1,5 @@
-import { BlogHome } from '@/components/blog-home'
-import { Metadata, NextPage } from 'next'
+import { BlogHome } from "@/components";
+import { Metadata, NextPage } from "next";
 
 interface Props {}
 
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 };
 
 const Page: NextPage<Props> = ({}) => {
-  return <BlogHome />
-}
+  return <BlogHome />;
+};
 
-export default Page
+export default Page;
