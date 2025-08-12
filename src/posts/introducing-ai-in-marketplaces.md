@@ -8,6 +8,8 @@ author:
   picture: "/assets/blog/authors/jack.jpeg"
 ogImage:
   url: "/assets/blog/introducing-ai-in-marketplaces/cover.webp"
+slug: "introducing-ai-in-marketplaces"
+published: false
 ---
 
 ## Welcome to the NextGen Marketplace Evolution

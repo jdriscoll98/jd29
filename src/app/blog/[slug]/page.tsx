@@ -1,4 +1,4 @@
-import { Article } from "@/components/";
+import { Article } from "@/components/blog";
 import { getPostBySlug } from "@/lib/api";
 
 export const generateMetadata = async ({

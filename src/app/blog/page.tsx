@@ -1,4 +1,4 @@
-import { BlogHome } from "@/components";
+import { BlogHome } from "@/components/blog";
 import { Metadata, NextPage } from "next";
 
 interface Props {}
