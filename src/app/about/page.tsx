@@ -46,20 +46,22 @@ const stops = [
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-green-700 text-white">
+    <div className="min-h-screen bg-zinc-950 text-white font-mono">
       {/* Header */}
-      <div className="sticky top-0 z-10 bg-green-800/80 backdrop-blur-sm border-b border-white/10 px-6 py-4 flex items-center gap-4">
-        <Link href="/" className="text-white/70 hover:text-white transition-colors text-sm">
-          ← Back
+      <div className="sticky top-0 z-10 bg-zinc-950/80 backdrop-blur-sm border-b border-green-700/30 px-6 py-4 flex items-center gap-4">
+        <Link href="/" className="text-green-500 hover:text-green-400 transition-colors text-sm">
+          ← back
         </Link>
-        <h1 className="text-lg font-semibold">About Me</h1>
+        <span className="text-zinc-600">/</span>
+        <h1 className="text-sm text-zinc-400">about.me</h1>
       </div>
 
       <div className="max-w-2xl mx-auto px-6 py-16">
         {/* Intro */}
         <div className="mb-16">
-          <h2 className="text-4xl font-bold mb-4">The Journey</h2>
-          <p className="text-white/70 text-lg">
+          <p className="text-green-500 text-sm mb-2 tracking-widest uppercase">// about</p>
+          <h2 className="text-4xl font-bold mb-4 text-white">The Journey</h2>
+          <p className="text-zinc-400 text-base leading-relaxed">
             Placeholder intro — a short personal note about who I am, what drives me, and where I&apos;m headed.
           </p>
         </div>
@@ -67,40 +69,44 @@ export default function About() {
         {/* Timeline */}
         <div className="relative">
           {/* Vertical line */}
-          <div className="absolute left-4 top-0 bottom-0 w-px bg-white/20" />
+          <div className="absolute left-4 top-0 bottom-0 w-px bg-green-700/30" />
 
-          <div className="space-y-12">
+          <div className="space-y-10">
             {stops.map((stop, i) => (
               <div key={i} className="relative pl-12">
                 {/* Dot */}
                 <div
-                  className={`absolute left-0 top-1 w-8 h-8 rounded-full border-2 flex items-center justify-center text-xs font-bold
+                  className={`absolute left-0 top-1 w-8 h-8 rounded-sm border flex items-center justify-center text-xs font-bold
                     ${stop.current
-                      ? "bg-white text-green-700 border-white"
-                      : "bg-green-700 border-white/40 text-white/60"
+                      ? "bg-green-500 text-zinc-950 border-green-500"
+                      : "bg-zinc-950 border-green-700/50 text-green-600"
                     }`}
                 >
-                  {i + 1}
+                  {String(i + 1).padStart(2, "0")}
                 </div>
 
                 {/* Card */}
-                <div className={`rounded-xl p-6 border ${stop.current ? "border-white/40 bg-white/10" : "border-white/10 bg-white/5"}`}>
-                  <p className="text-white/50 text-sm mb-1">{stop.period}</p>
-                  <h3 className="text-xl font-semibold">{stop.role}</h3>
-                  <p className="text-white/70 font-medium mb-3">{stop.place}</p>
-                  <p className="text-white/60 text-sm leading-relaxed mb-4">{stop.description}</p>
+                <div className={`rounded-sm p-6 border transition-colors
+                  ${stop.current
+                    ? "border-green-500/60 bg-green-950/20"
+                    : "border-green-700/20 bg-zinc-900/50 hover:border-green-700/40"
+                  }`}>
+                  <p className="text-green-600 text-xs mb-1 tracking-wider">{stop.period}</p>
+                  <h3 className="text-lg font-bold text-white">{stop.role}</h3>
+                  <p className="text-zinc-400 text-sm font-medium mb-3">{stop.place}</p>
+                  <p className="text-zinc-500 text-sm leading-relaxed mb-4">{stop.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {stop.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-xs px-2 py-1 rounded-full bg-white/10 text-white/70"
+                        className="text-xs px-2 py-0.5 border border-green-700/40 text-green-500 rounded-sm"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
                   {stop.current && (
-                    <p className="mt-3 text-xs text-green-300 font-medium">● Currently here</p>
+                    <p className="mt-4 text-xs text-green-500 tracking-widest">▶ CURRENT</p>
                   )}
                 </div>
               </div>
