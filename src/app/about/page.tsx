@@ -59,7 +59,7 @@ export default function About() {
       <div className="max-w-2xl mx-auto px-6 py-16">
         {/* Intro */}
         <div className="mb-16">
-          <p className="text-green-500 text-sm mb-2 tracking-widest uppercase">// about</p>
+          <p className="text-green-500 text-sm mb-2 tracking-widest uppercase">&#47;&#47; about</p>
           <h2 className="text-4xl font-bold mb-4 text-white">The Journey</h2>
           <p className="text-zinc-400 text-base leading-relaxed">
             Placeholder intro — a short personal note about who I am, what drives me, and where I&apos;m headed.
