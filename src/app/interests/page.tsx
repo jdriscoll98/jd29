@@ -38,7 +38,7 @@ async function getDailyPuzzle(): Promise<{
     const history = chess.history({ verbose: true });
 
     const boardAtPuzzle = new Chess();
-    for (let i = 0; i < puzzle.initialPly; i++) {
+    for (let i = 0; i <= puzzle.initialPly; i++) {
       boardAtPuzzle.move(history[i]);
     }
 
