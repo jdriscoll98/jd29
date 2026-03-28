@@ -6,15 +6,15 @@ const stops = [
     role: "Computer Science Student",
     place: "University of Florida",
     description:
-      "Placeholder — studying CS with a minor in Entrepreneurship. First exposure to real codebases, open-source, and building things that mattered.",
-    tags: ["Python", "Django", "Git"],
+      "Earned a BS in Computer Science with a Minor in Entrepreneurship. Coursework ranged from application security and compiler design to a semester-long project with a B-Corp company — and it was here I realized I wanted to build real things, not just study them.",
+    tags: ["Python", "Django", "Git", "Entrepreneurship"],
   },
   {
     period: "Jan 2019 – Sep 2020",
     role: "Full Stack Web Developer",
     place: "UF CISE Department",
     description:
-      "Placeholder — built and maintained student-facing apps for the CS department while still in school. First taste of production software.",
+      "While still a student, I built and maintained multiple student-facing apps for the CS department. Introduced automated scripts that cut processing times by 30%, and got hands-on with the full deployment stack — Git, Digital Ocean CI/CD, and NGINX. My first real production software.",
     tags: ["Django", "jQuery", "NGINX", "Digital Ocean"],
   },
   {
@@ -22,7 +22,7 @@ const stops = [
     role: "Senior Software Engineer",
     place: "UKG",
     description:
-      "Placeholder — joined as an intern and grew into a Senior Engineer on the Design System team. Built a component library used by 2,000+ engineers across the company.",
+      "Started as an intern and grew into a Senior Engineer on the Design System team. Led the development of a component library now used by 2,000+ engineers across UKG. Championed test-driven development and CI/CD improvements that reduced bug rates by 40% and sped up release cycles by 25%. Also mentored interns and led technical demos for leadership.",
     tags: ["Angular", "TypeScript", "CI/CD", "Design Systems"],
   },
   {
@@ -30,7 +30,7 @@ const stops = [
     role: "Founding Engineer",
     place: "MX Locker",
     description:
-      "Placeholder — first engineer at a pre-seed motocross marketplace startup. Built the platform from scratch, led contractors, and drove the company's first SaaS revenue.",
+      "First engineer at a pre-seed motocross marketplace startup. Built the entire platform from scratch — a Next.js app with Firebase backend, a recommendation engine that boosted user engagement by 50%, and an integration suite that generated the company's first SaaS revenue. Led a team of contractors, cut hosting costs by 50%, and reduced search costs by 66%.",
     tags: ["Next.js", "Firebase", "AWS", "Full Stack"],
   },
   {
@@ -38,7 +38,7 @@ const stops = [
     role: "Software Engineer",
     place: "PGA Tour",
     description:
-      "Placeholder — working on Shotlink2, the Tour's next-gen real-time shot-tracking system. Focused on event-driven architecture that powers live data for fans, broadcasters, and officials.",
+      "Working on Shotlink2, the PGA Tour's next-generation real-time shot-tracking platform. Building event-driven systems in C# on AWS that process and deliver live scoring and shot data during tournaments — powering the experiences fans, broadcasters, and tour officials rely on every week.",
     tags: ["C#", "AWS", "Event-Driven", "Real-Time"],
     current: true,
   },
@@ -62,7 +62,7 @@ export default function About() {
           <p className="text-green-500 text-sm mb-2 tracking-widest uppercase">&#47;&#47; about</p>
           <h2 className="text-4xl font-bold mb-4 text-white">The Journey</h2>
           <p className="text-zinc-400 text-base leading-relaxed">
-            Placeholder intro — a short personal note about who I am, what drives me, and where I&apos;m headed.
+            I&apos;m Jack — a software engineer who&apos;s worked across the full spectrum, from large enterprise teams to being the first engineer at a pre-seed startup. I thrive in environments that demand creative thinking and a bias toward action. Right now I&apos;m building real-time systems at the PGA Tour, bringing the same mindset I&apos;ve carried from day one: ship good software, keep learning, and make things that matter.
           </p>
         </div>
 
