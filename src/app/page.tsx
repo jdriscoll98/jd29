@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import LiveClock from "@/components/live-clock";
 
 export default function Home() {
   return (
@@ -24,7 +23,6 @@ export default function Home() {
         {/* Handler */}
         <p className="text-green-500 text-xs tracking-widest uppercase mb-1">&#47;&#47; software engineer</p>
         <h2 className="text-3xl font-bold text-white">@jd29</h2>
-        <LiveClock />
 
         {/* Quote */}
         <p className="text-zinc-500 text-sm italic mt-3 max-w-sm mx-auto leading-relaxed">
