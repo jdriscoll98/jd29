@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Chess } from "chess.js";
 import ChessWidget from "@/components/widgets/chess-widget";
+import GolfWidget from "@/components/widgets/golf-widget";
 
 interface LichessPuzzleResponse {
   puzzle: {
@@ -58,8 +59,89 @@ async function getDailyPuzzle(): Promise<{
   }
 }
 
+const GHIN_NUMBER = "10715005";
+
+interface GhinScore {
+  adjusted_gross_score: number;
+  differential: number;
+  played_at: string;
+  number_of_holes: number;
+  score_type_display_short: string;
+}
+
+interface GhinGolfer {
+  handicap_index: number;
+  hi_display: string;
+}
+
+async function getGhinData(): Promise<{
+  handicapIndex: number;
+  hiDisplay: string;
+  scores: GhinScore[];
+} | null> {
+  const password = process.env.GHIN_PASSWORD;
+  if (!password) return null;
+
+  try {
+    // Step 1: Login to get token
+    const loginRes = await fetch("https://api2.ghin.com/api/v1/golfer_login.json", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        user: {
+          email_or_ghin: GHIN_NUMBER,
+          password,
+          remember_me: "true",
+        },
+        token: "nonblank",
+      }),
+      next: { revalidate: 3600 },
+    });
+
+    if (!loginRes.ok) return null;
+    const loginData = await loginRes.json();
+    const token: string = loginData?.golfer_user?.golfer_user_token;
+    if (!token) return null;
+
+    const headers = {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    };
+
+    // Step 2: Fetch handicap index
+    const golferRes = await fetch(
+      `https://api2.ghin.com/api/v1/golfers/search.json?per_page=1&page=1&golfer_id=${GHIN_NUMBER}&source=GHINcom`,
+      { headers, next: { revalidate: 3600 } }
+    );
+    if (!golferRes.ok) return null;
+    const golferData = await golferRes.json();
+    const golfer: GhinGolfer = golferData?.golfers?.[0];
+    if (!golfer) return null;
+
+    // Step 3: Fetch recent scores
+    const scoresRes = await fetch(
+      `https://api2.ghin.com/api/v1/scores.json?golfer_id=${GHIN_NUMBER}&source=GHINcom&limit=3`,
+      { headers, next: { revalidate: 3600 } }
+    );
+    if (!scoresRes.ok) {
+      return { handicapIndex: golfer.handicap_index, hiDisplay: golfer.hi_display, scores: [] };
+    }
+    const scoresData = await scoresRes.json();
+    const scores: GhinScore[] = (scoresData?.scores ?? []).slice(0, 3);
+
+    return {
+      handicapIndex: golfer.handicap_index,
+      hiDisplay: golfer.hi_display,
+      scores,
+    };
+  } catch {
+    return null;
+  }
+}
+
 export default async function Interests() {
   const puzzle = await getDailyPuzzle();
+  const ghinData = await getGhinData();
 
   return (
     <div className="min-h-screen bg-zinc-950 text-white font-mono">
@@ -84,6 +166,15 @@ export default async function Interests() {
 
         {/* Widget grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Golf widget */}
+          {ghinData && (
+            <GolfWidget
+              handicapIndex={ghinData.handicapIndex}
+              hiDisplay={ghinData.hiDisplay}
+              scores={ghinData.scores}
+            />
+          )}
+
           {/* Chess widget */}
           {puzzle ? (
             <ChessWidget
