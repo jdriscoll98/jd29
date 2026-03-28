@@ -164,6 +164,15 @@ export default async function Interests() {
           </p>
         </div>
 
+        {/* Currently Reading */}
+        <div className="mb-6 border border-green-700/30 rounded-sm bg-zinc-900/50 p-6">
+          <p className="text-green-500 text-xs tracking-widest uppercase mb-3">&#47;&#47; currently reading</p>
+          <div>
+            <p className="text-white font-bold text-lg leading-snug">Red Rising</p>
+            <p className="text-zinc-400 text-sm mt-1">by Pierce Brown</p>
+          </div>
+        </div>
+
         {/* Widget grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Golf widget */}
