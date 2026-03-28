@@ -88,6 +88,12 @@ export default function Home() {
           >
             about_me
           </Link>
+          <Link
+            href="/interests"
+            className="text-sm px-6 py-2 border border-green-700/40 text-green-500 rounded-sm hover:bg-green-500/10 hover:border-green-500 transition-colors tracking-wider"
+          >
+            my_interests
+          </Link>
         </div>
       </div>
     </div>
