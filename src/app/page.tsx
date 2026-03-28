@@ -81,10 +81,6 @@ export default function Home() {
         <div className="mt-4">
           <Link className="underline" href="/resume.html">View My Resume</Link>
         </div>
-        {/* Blog Link */}
-        <div className="mt-4">
-          <Link className="underline" href="/blog">View My Blog</Link>
-        </div>
       </div>
     </div>
   );
