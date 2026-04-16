@@ -1,23 +1,5 @@
 import Link from "next/link";
-
-const posts = [
-  {
-    slug: "hello-world",
-    date: "2026-04-16",
-    title: "Hello, World",
-    description:
-      "Kicking off this blog — a place to share notes on software engineering, real-time systems, and whatever else I'm building or learning.",
-    tags: ["meta", "intro"],
-  },
-];
-
-function formatDate(date: string) {
-  return new Date(date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
-}
+import { posts, formatDate } from "./posts";
 
 export default function Blog() {
   return (
@@ -47,9 +29,10 @@ export default function Blog() {
             <p className="text-zinc-500 text-sm italic">No posts yet — check back soon.</p>
           ) : (
             posts.map((post) => (
-              <article
+              <Link
                 key={post.slug}
-                className="rounded-sm p-6 border border-green-700/20 bg-zinc-900/50 hover:border-green-700/40 transition-colors"
+                href={`/blog/${post.slug}`}
+                className="block rounded-sm p-6 border border-green-700/20 bg-zinc-900/50 hover:border-green-700/40 transition-colors"
               >
                 <p className="text-green-600 text-xs mb-1 tracking-wider">
                   {formatDate(post.date)}
@@ -68,7 +51,7 @@ export default function Blog() {
                     </span>
                   ))}
                 </div>
-              </article>
+              </Link>
             ))
           )}
         </div>
