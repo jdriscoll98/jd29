@@ -95,6 +95,12 @@ export default function Home() {
             my_interests
           </Link>
           <Link
+            href="/blog"
+            className="text-sm px-6 py-2 border border-green-700/40 text-green-500 rounded-sm hover:bg-green-500/10 hover:border-green-500 transition-colors tracking-wider"
+          >
+            blog
+          </Link>
+          <Link
             href="/contact"
             className="text-sm px-6 py-2 border border-green-700/40 text-green-500 rounded-sm hover:bg-green-500/10 hover:border-green-500 transition-colors tracking-wider"
           >
