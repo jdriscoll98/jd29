@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", message: "", website: "" });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const loadedAt = useRef(Date.now());
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -14,11 +15,11 @@ export default function Contact() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, loadedAt: loadedAt.current }),
       });
       if (!res.ok) throw new Error();
       setStatus("success");
-      setForm({ name: "", email: "", message: "" });
+      setForm({ name: "", email: "", message: "", website: "" });
     } catch {
       setStatus("error");
     }
@@ -51,6 +52,19 @@ export default function Contact() {
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-5">
+            <div aria-hidden="true" className="absolute left-[-10000px] top-auto w-px h-px overflow-hidden">
+              <label htmlFor="website">Website</label>
+              <input
+                id="website"
+                name="website"
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+                value={form.website}
+                onChange={(e) => setForm((f) => ({ ...f, website: e.target.value }))}
+              />
+            </div>
+
             <div className="space-y-1.5">
               <label className="text-xs text-green-600 tracking-widest uppercase">name</label>
               <input
